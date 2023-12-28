@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
     <title>Todo List</title>
 </head>
 <body>
@@ -8,10 +9,11 @@
     <ul>
         {% for todo in todos %}
             <li>{{ todo.title }} - {{ todo.description }} - Completed: {{ todo.completed }}</li>
+            <a href="{% url 'update_todo' todo.id %}">Update</a>
         {% endfor %}
     </ul>
     <a href="{% url 'add_todo' %}">Add Todo</a>
-    <a href="{% url 'update_todo' %}">Update Todo</a>
+
 </body>
 </html>
 
